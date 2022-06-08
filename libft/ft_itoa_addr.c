@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa_addr.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/17 16:19:24 by jatan             #+#    #+#             */
+/*   Updated: 2022/01/17 16:19:24 by jatan            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_itoa_addr(size_t n)
@@ -6,8 +18,8 @@ char	*ft_itoa_addr(size_t n)
 	char	buffer[14];
 	int		i;
 
-//	if (n == 0)
-//		return (ft_strdup("(nil)"));
+	if (n == 0)
+		return (ft_strdup("(nil)"));
 	ft_strlcpy(hex, "0123456789abcdef", 17);
 	ft_strlcpy(buffer, "0x", 3);
 	i = 2;
