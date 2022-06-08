@@ -6,7 +6,7 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 12:54:14 by jatan             #+#    #+#             */
-/*   Updated: 2021/09/05 22:48:54 by jatan            ###   ########.fr       */
+/*   Updated: 2022/06/09 03:37:18 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,26 @@ int	ft_printf(const char *format, ...)
 	va_list	args;
 	int		count;
 	int		input;
+	char	*found;
+	t_flag	*flag;
 
 	count = 0;
 	va_start(args, format);
 	while (*format)
 	{
 		input = -1;
-		if (*format == '%' && *(format + 1))
+		found = ft_strchr(format, '%');
+		if (*found && *(found + 1))
 		{
-			input = handle_input(*(format + 1), args);
-			if (input != -1)
+			flag = set_flags(FLAGS, found, args);
+			if (flag == NULL)
 				format += 2;
+			else
+			{
+				input = handle_input(*(found + 1), args);
+				if (input != -1)
+					format += 2;
+			}
 		}
 		if (*format && input == -1)
 			input = ft_putchar_fd(*format++, 1);

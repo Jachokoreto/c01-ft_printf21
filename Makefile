@@ -20,6 +20,10 @@ $(NAME): $(OBJ)
 test: $(NAME) main.c
 	@$(CC) main.c -L. -lftprintf && $(VALGRIND) ./a.out && rm a.out
 
+main: 
+	@gcc main.c && ./a.out && rm a.out
+
+
 $(OBJ_DIR)/%.o : $(SRC_DIRS)/%.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) -c $< -o $@

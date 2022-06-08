@@ -6,13 +6,13 @@
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 02:51:05 by jatan             #+#    #+#             */
-/*   Updated: 2022/06/09 03:06:36 by jatan            ###   ########.fr       */
+/*   Updated: 2022/06/09 03:16:27 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	handle_flags(t_flag *flag, char *str, char c)
+void	handle_flags(t_flag *flag, char *str, char spec)
 {
 
 }
