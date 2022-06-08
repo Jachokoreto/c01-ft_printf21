@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   track_flags.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jatan <jatan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 02:51:56 by jatan             #+#    #+#             */
-/*   Updated: 2022/06/09 03:05:03 by jatan            ###   ########.fr       */
+/*   Created: 2022/06/09 02:51:05 by jatan             #+#    #+#             */
+/*   Updated: 2022/06/09 03:09:44 by jatan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
+void	track_flags(t_flag *flag, char *flag_set, char found)
+{
+	int	index;
 
-typedef int	t_flag;
-
-int	ft_printf(const char *format, ...);
-
-#endif
+	index = flag_set - ft_strchr(flag_set, found);
+	flag[index] += 1;
+}
